@@ -33,6 +33,10 @@ class HomeScreen extends StatelessWidget {
         child: const Column(
           children: [
             DashCard(),
+            SizedBox(
+              height: 10,
+            ),
+            DashList()
           ],
         ),
       ),
@@ -55,12 +59,30 @@ class DashCard extends StatelessWidget {
             Column(
               children: [Text('Tasks done:')],
             ),
+            SizedBox(
+              width: 150,
+            ),
             Column(
               children: [Text('To do')],
             )
           ],
         ),
       ),
+    );
+  }
+}
+
+class DashList extends StatelessWidget {
+  const DashList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 350,
+      height: 500,
+      decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 97, 97, 97),
+          borderRadius: BorderRadius.circular(20.0)),
     );
   }
 }

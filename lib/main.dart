@@ -79,10 +79,56 @@ class DashList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 350,
-      height: 500,
+      height: 520,
       decoration: BoxDecoration(
           color: const Color.fromARGB(255, 97, 97, 97),
           borderRadius: BorderRadius.circular(20.0)),
+      child: const Padding(
+        padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+        child: Column(
+          children: [CreateTask()],
+        ),
+      ),
     );
+  }
+}
+
+class CreateTask extends StatelessWidget {
+  const CreateTask({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Card(
+      child: TextField(
+        obscureText: false,
+        cursorColor: const Color.fromARGB(255, 223, 223, 223),
+        style: const TextStyle(color: Color.fromARGB(255, 223, 223, 223)),
+        decoration: InputDecoration(
+            labelStyle:
+                const TextStyle(color: Color.fromARGB(255, 223, 223, 223)),
+            filled: true,
+            fillColor: const Color.fromARGB(255, 19, 18, 18),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            focusedBorder: const OutlineInputBorder(
+                borderSide:
+                    BorderSide(color: Color.fromARGB(255, 223, 223, 223))),
+            labelText: 'New Task'),
+        onSubmitted: (task) {
+          print(task);
+        },
+      ),
+    );
+  }
+}
+
+class TaskList extends StatelessWidget {
+  const TaskList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text('teste');
   }
 }
